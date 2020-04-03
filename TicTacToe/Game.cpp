@@ -1,6 +1,6 @@
 #include "Game.h"
 
-void Game::Draw() {
+void Game::Draw() const{
 	system("cls");
 	//Drawing every row
 	for (int row = 0; row < 3; row++) {
@@ -20,7 +20,7 @@ void Game::Draw() {
 	}
 }
 
-std::pair<bool,Game::tileState> Game::CheckWin() {
+std::pair<bool,Game::tileState> Game::CheckWin() const{
 	// Check for every row if it's the same
 	for (int row = 0; row < 3; row++) {
 		if(tile[row][0] != tileState::empty)

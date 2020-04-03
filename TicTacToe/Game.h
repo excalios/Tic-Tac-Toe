@@ -13,8 +13,8 @@ private:
 	tileState tile[3][3] = { {empty, empty, empty}, {empty, empty, empty}, {empty, empty, empty}};
 	bool pOneTurn = true;
 public:
-	void Draw();
-	std::pair<bool, tileState> CheckWin();
+	void Draw() const;
+	std::pair<bool, tileState> CheckWin() const;
 	void Input();
 };
 
