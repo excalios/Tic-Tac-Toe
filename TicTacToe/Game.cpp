@@ -36,13 +36,11 @@ std::pair<bool,Game::tileState> Game::CheckWin() const{
 			}
 	}
 	// Check diagonal
-	if ((tile[0][0] != empty) || (tile[0][2] != empty)) {
-		if ((tile[0][0] == tile[1][1]) && (tile[0][0] == tile[2][2])) {
-			return std::make_pair(true, tile[0][0]);
-		}
-		else if ((tile[0][2] == tile[1][1]) && (tile[0][2] == tile[2][0])) {
-			return std::make_pair(true, tile[2][0]);
-		}
+	if ((tile[0][0] == tile[1][1]) && (tile[0][0] == tile[2][2]) && (tile[0][0] != empty)) {
+		return std::make_pair(true, tile[0][0]);
+	}
+	else if ((tile[0][2] == tile[1][1]) && (tile[0][2] == tile[2][0]) && (tile[0][2] != empty)) {
+		return std::make_pair(true, tile[2][0]);
 	}
 	else for(int row = 0; row < 3; row++){
 		for(int col = 0; col < 3; col++){
